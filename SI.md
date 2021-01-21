@@ -102,10 +102,10 @@ OpenDKIM で秘密鍵と公開鍵を作成後、追記します。<br>
 
 設定例<br>
   `
-# DKIM
-smtpd_milters = inet:127.0.0.1:8891
-non_smtpd_milters = $smtpd_milters
-milter_default_action = accept
+# DKIM<br>
+smtpd_milters = inet:127.0.0.1:8891<br>
+non_smtpd_milters = $smtpd_milters<br>
+milter_default_action = accept<br>
   `<br>
 
 ### 8 TLS設定の追加
@@ -114,9 +114,9 @@ SMTPセッションでTLSを有効化、メールヘッダにプロトコルや�
 
 設定例<br>
   `
-#tls
-smtp_tls_security_level = may
-smtpd_tls_security_level = may
-smtpd_tls_received_header = yes
-smtp_tls_loglevel = 1
+#tls<br>
+smtp_tls_security_level = may<br>
+smtpd_tls_security_level = may<br>
+smtpd_tls_received_header = yes<br>
+smtp_tls_loglevel = 1<br>
   `<br>
