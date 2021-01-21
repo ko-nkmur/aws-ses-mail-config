@@ -1,5 +1,5 @@
 # 補足情報<br>
-## 1 opendakim.confの設定について
+## 1 opendkim.confの設定について
 変更箇所は以下の通りです。<br>
 ### 1 Modeの変更(39行目付近)
 変更前<br>
