@@ -6,7 +6,7 @@
 `Mode	v`<br>
 変更後<br>
 `Mode sv`<br>
-  
+
 ### 2 KeyFileのコメントアウト(98行目付近)
 変更前<br>
 `KeyFile	/etc/opendkim/keys/default.private  `<br>
@@ -22,7 +22,7 @@
 ### 4 SigningTableのコメントアウトを外す(108行目付近)
 変更前<br>
 `# SigningTable	refile:/etc/opendkim/SigningTable  `<br>
-変更後  
+変更後<br>
 `SigningTable	refile:/etc/opendkim/SigningTable  `<br>
 
 ### 5 ExternalIgnoreListのコメントアウトを外す(112行目付近)
@@ -44,7 +44,6 @@
 サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】、<br>
 セレクタ名を【20210101】とした例です。<br>
 最終行へ追記します。<br>
-
 設定例<br>
 `20210101._domainkey.mikumiku3939.com mikumiku3939.com:20210101:/etc/opendkim/keys/mikumiku3939/20210101.private  `<br>
 
@@ -54,7 +53,6 @@
 
 サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】、<br>
 セレクタ名を【20210101】とした例です。最終行へ追記します。<br>
-
 設定例<br>
 `*@mikumiku3939.com 20210101._domainkey.mikumiku3939.com  `<br>
 
@@ -75,14 +73,12 @@
 ### 4 IPv4の設定(inet_protocolsの変更 119行目付近)
 IPv4とIPv6両方が有効になっていますと、Eメール送信ができないことがあります。<br>
 IPv4のアドレスで設定している場合、IPv4で設定します。<br>
-
 設定例<br>
 `inet_protocols = ipv4  `<br>
 
 ### 5 masquarade_domainsの追加設定
 メールサーバのホスト名を隠蔽してEメールを送信する設定です。初期設定の状態ではないため、<br>
 追記します。<br>
-
 設定例<br>
 `masquerade_domains = mikumiku3939.com  `<br>
 
@@ -91,14 +87,12 @@ IPv4のアドレスで設定している場合、IPv4で設定します。<br>
 ここではSTARTTLSの設定を紹介します。<br>
 STARTLSは通信の暗号化方法の一つで、通常の通信プロトコルをSSL/TLSで暗号化された状態に切り替えます。これによりSMTP通信が暗号化されます。<br>
 初期設定の状態ではないため、追記します。<br>
-
 設定例<br>
 `#STARTTLS`<br>
 `smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt`<br>
 
 ### 7 OpenDKIM 設定の追加
 OpenDKIM で秘密鍵と公開鍵を作成後、追記します。<br>
-
 設定例<br>
 `# DKIM`<br>
 `smtpd_milters = inet:127.0.0.1:8891`<br>
@@ -108,7 +102,6 @@ OpenDKIM で秘密鍵と公開鍵を作成後、追記します。<br>
 ### 8 TLS設定の追加
 SMTPセッションでTLSを有効化、メールヘッダにプロトコルや暗号に関する情報を追記、<br>
 ログ出力の設定を行います。<br>
-
 設定例<br>
   `#tls`<br>
   `smtp_tls_security_level = may`<br>
