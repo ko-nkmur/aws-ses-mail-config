@@ -41,16 +41,17 @@
 書式<br>
 `[セレクタ名]._domainkey.[ドメイン名] [ドメイン名]:[セレクタ名]:[秘密鍵へのパス]  `<br>
 
-サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】、<br>
-セレクタ名を【20210101】とした例です。最終行へ追記します。<br>
+サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】、セレクタ名を【20210101】とした例です。<br>
+最終行へ追記します。<br>
 設定例<br>
 `20210101._domainkey.mikumiku3939.com mikumiku3939.com:20210101:/etc/opendkim/keys/mikumiku3939/20210101.private  `<br>
 
 ## 3 SigningTableの書式
 書式<br>
-`*@[ドメイン名] ._domainkey.[ドメイン名]  `<br>
+`*@[ドメイン名] [セレクタ名]._domainkey.[ドメイン名]  `<br>
 
-サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】とした例です。<br>
+**[セレクタ名]._domainkey.[ドメイン名]**はDKIMをRoute53へ登録する際のレコード名です。
+サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】、セレクタ名を【20210101】とした例です。<br>
 最終行へ追記します。<br>
 設定例<br>
 `*@mikumiku3939.com 20210101._domainkey.mikumiku3939.com  `<br>
