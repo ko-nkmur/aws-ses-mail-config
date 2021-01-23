@@ -50,7 +50,7 @@
 書式<br>
 `*@[ドメイン名] ._domainkey.[ドメイン名]  `<br>
 
-サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】、<br>
+サンプルには以下のように設定しています。ドメイン名を【mikumiku3939.com】とした例です。<br>
 最終行へ追記します。<br>
 設定例<br>
 `*@mikumiku3939.com 20210101._domainkey.mikumiku3939.com  `<br>
